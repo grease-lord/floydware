@@ -77,7 +77,7 @@ void CMenu::DrawMenu()
 			{
 				Vars::Menu::ShowPlayerlist = !Vars::Menu::ShowPlayerlist;
 			}
-			ImGui::HelpMarker("Playerlist");
+			ImGui::HelpMarker("Niggalist");
 
 			// Keybinds Icon
 			ImGui::SetCursorPos({ currentX -= 25, 0 });
@@ -85,7 +85,7 @@ void CMenu::DrawMenu()
 			{
 				Vars::Menu::ShowKeybinds = !Vars::Menu::ShowKeybinds;
 			}
-			ImGui::HelpMarker("Keybinds");
+			ImGui::HelpMarker("The buttons.");
 
 			// Material Editor Icon
 			ImGui::SetCursorPos({ currentX -= 25, 0 });
@@ -93,7 +93,7 @@ void CMenu::DrawMenu()
 			{
 				F::MaterialEditor.IsOpen = !F::MaterialEditor.IsOpen;
 			}
-			ImGui::HelpMarker("Material Editor");
+			ImGui::HelpMarker("vmt edit");
 
 			// Lua Menu Icon
 			ImGui::SetCursorPos({ currentX -= 25, 0 });
@@ -101,7 +101,7 @@ void CMenu::DrawMenu()
 			{
 				F::LuaMenu.IsOpen = !F::LuaMenu.IsOpen;
 			}
-			ImGui::HelpMarker("Lua Scripts");
+			ImGui::HelpMarker("skeet luas !!!");
 
 #ifdef _DEBUG
 // Debug Menu
@@ -110,7 +110,7 @@ void CMenu::DrawMenu()
 			{
 				ShowDebugMenu = !ShowDebugMenu;
 			}
-			ImGui::HelpMarker("Debug Menu");
+			ImGui::HelpMarker("broken ass cheat");
 #endif
 		}
 
@@ -176,27 +176,27 @@ void CMenu::DrawTabbar()
 	{
 		ImGui::PushStyleColor(ImGuiCol_Button, BackgroundLight.Value);
 		ImGui::PushStyleColor(ImGuiCol_Text, TextLight.Value);
-		if (ImGui::TabButton("Aimbot", CurrentTab == MenuTab::Aimbot))
+		if (ImGui::TabButton("robo aim", CurrentTab == MenuTab::Aimbot))
 		{
 			CurrentTab = MenuTab::Aimbot;
 		}
 
-		if (ImGui::TabButton("Triggerbot", CurrentTab == MenuTab::Trigger))
+		if (ImGui::TabButton("advanced clicker", CurrentTab == MenuTab::Trigger))
 		{
 			CurrentTab = MenuTab::Trigger;
 		}
 
-		if (ImGui::TabButton("Visuals", CurrentTab == MenuTab::Visuals))
+		if (ImGui::TabButton("see stuff", CurrentTab == MenuTab::Visuals))
 		{
 			CurrentTab = MenuTab::Visuals;
 		}
 
-		if (ImGui::TabButton("HvH", CurrentTab == MenuTab::HvH))
+		if (ImGui::TabButton("retard vs retard", CurrentTab == MenuTab::HvH))
 		{
 			CurrentTab = MenuTab::HvH;
 		}
 
-		if (ImGui::TabButton("Misc", CurrentTab == MenuTab::Misc))
+		if (ImGui::TabButton("Other", CurrentTab == MenuTab::Misc))
 		{
 			CurrentTab = MenuTab::Misc;
 		}
@@ -275,7 +275,7 @@ void CMenu::MenuAimbot()
 			WSlider("Aimbot FoV####AimbotFoV", &Vars::Aimbot::Global::AimFOV.Value, 0.f, 180.f, "%.f", ImGuiSliderFlags_AlwaysClamp);
 			ColorPickerL("Aimbot FOV circle", Colors::FOVCircle);
 			WToggle("Autoshoot###AimbotAutoshoot", &Vars::Aimbot::Global::AutoShoot.Value); HelpMarker("Automatically shoot when a target is found");
-			MultiCombo({ "Players", "Buildings", "Stickies", "NPCs", "Bombs" }, { &Vars::Aimbot::Global::AimPlayers.Value, &Vars::Aimbot::Global::AimBuildings.Value, &Vars::Aimbot::Global::AimStickies.Value, &Vars::Aimbot::Global::AimNPC.Value, &Vars::Aimbot::Global::AimBombs.Value }, "Aim targets");
+			MultiCombo({ "Niggers", "Buildings", "Stickies", "Non Playable Characters", "Praise Allah!!! Stempeberr 11!!!" }, { &Vars::Aimbot::Global::AimPlayers.Value, &Vars::Aimbot::Global::AimBuildings.Value, &Vars::Aimbot::Global::AimStickies.Value, &Vars::Aimbot::Global::AimNPC.Value, &Vars::Aimbot::Global::AimBombs.Value }, "Aim targets");
 			HelpMarker("Choose which targets the Aimbot should aim at");
 			{
 				static std::vector flagNames{ "Invulnerable", "Cloaked", "Dead Ringer", "Friends", "Taunting", "Vaccinator", "Unsimulated Players", "Disguised" };
@@ -1517,7 +1517,7 @@ void CMenu::MenuHvH()
 			InputKeybind("Teleport key", Vars::Misc::CL_Move::TeleportKey); HelpMarker("Shifts ticks to warp");
 			if (Vars::Misc::CL_Move::DTMode.Value == 0 || Vars::Misc::CL_Move::DTMode.Value == 2)
 			{
-				InputKeybind("Doubletap key", Vars::Misc::CL_Move::DoubletapKey); HelpMarker("Only doubletap when the key is pressed. Leave as (None) for always active.");
+				InputKeybind("Fastclicker key", Vars::Misc::CL_Move::DoubletapKey); HelpMarker("Only click faster when the key is pressed. Leave as (None) for always active.");
 			}
 
 			WCombo("Teleport Mode", &Vars::Misc::CL_Move::TeleportMode.Value, { "Plain", "Smooth" }); HelpMarker("How the teleport should be done");
@@ -1527,11 +1527,11 @@ void CMenu::MenuHvH()
 			}
 			MultiCombo({ "Recharge While Dead", "Auto Recharge", "Wait for DT", "Anti-warp", "Avoid airborne", "Retain Fakelag", "Stop Recharge Movement", "Safe Tick", "Safe Tick Airborne" }, { &Vars::Misc::CL_Move::RechargeWhileDead.Value, &Vars::Misc::CL_Move::AutoRecharge.Value, &Vars::Misc::CL_Move::WaitForDT.Value, &Vars::Misc::CL_Move::AntiWarp.Value, &Vars::Misc::CL_Move::NotInAir.Value, &Vars::Misc::CL_Move::RetainFakelag.Value, &Vars::Misc::CL_Move::StopMovement.Value, &Vars::Misc::CL_Move::SafeTick.Value, &Vars::Misc::CL_Move::SafeTickAirOverride.Value }, "Options");
 			HelpMarker("Enable various features regarding tickbase exploits");
-			WCombo("Doubletap Mode", &Vars::Misc::CL_Move::DTMode.Value, { "On key", "Always", "Disable on key", "Disabled" }); HelpMarker("How should DT behave");
+			WCombo("Faster clicking Mode", &Vars::Misc::CL_Move::DTMode.Value, { "On key", "Always", "Disable on key", "Disabled" }); HelpMarker("How should DT behave");
 			const int ticksMax = g_ConVars.sv_maxusrcmdprocessticks->GetInt() - 2;
-			WSlider("Ticks to shift", &Vars::Misc::CL_Move::DTTicks.Value, 1, ticksMax ? ticksMax : 22, "%d"); HelpMarker("How many ticks to shift");
-			WSlider("Passive Recharge Factor", &Vars::Misc::CL_Move::PassiveRecharge.Value, 0, 22, "%d");
-			WToggle("SpeedHack", &Vars::Misc::CL_Move::SEnabled.Value); HelpMarker("Speedhack Master Switch");
+			WSlider("Clicks to shift", &Vars::Misc::CL_Move::DTTicks.Value, 1, ticksMax ? ticksMax : 22, "%d"); HelpMarker("How many ticks to shift");
+			WSlider("FAST Recharge Factor", &Vars::Misc::CL_Move::PassiveRecharge.Value, 0, 22, "%d");
+			WToggle("innovate.tf", &Vars::Misc::CL_Move::SEnabled.Value); HelpMarker("p100");
 			if (Vars::Misc::CL_Move::SEnabled.Value)
 			{
 				WSlider("SpeedHack Factor", &Vars::Misc::CL_Move::SFactor.Value, 1, 66, "%d");
@@ -2210,7 +2210,7 @@ void CMenu::DrawKeybinds()
 
 		drawOption("Aimbot", isActive(Vars::Aimbot::Global::Active.Value, Vars::Aimbot::Global::AimKey.Value, Vars::Aimbot::Global::AimKey.Value));
 		drawOption("Auto Shoot", Vars::Aimbot::Global::AutoShoot.Value);
-		drawOption("Double Tap", isActive(Vars::Misc::CL_Move::DTMode.Value != 3, Vars::Misc::CL_Move::DTMode.Value == 0, Vars::Misc::CL_Move::DoubletapKey.Value));
+		drawOption("Fast Click 32 Tick", isActive(Vars::Misc::CL_Move::DTMode.Value != 3, Vars::Misc::CL_Move::DTMode.Value == 0, Vars::Misc::CL_Move::DoubletapKey.Value));
 		drawOption("Anti Aim", Vars::AntiHack::AntiAim::Active.Value);
 		drawOption("Fakelag", isActive(Vars::Misc::CL_Move::Fakelag.Value, Vars::Misc::CL_Move::FakelagOnKey.Value, Vars::Misc::CL_Move::FakelagKey.Value));
 		drawOption("Triggerbot", isActive(Vars::Triggerbot::Global::Active.Value, Vars::Triggerbot::Global::TriggerKey.Value, Vars::Triggerbot::Global::TriggerKey.Value));
