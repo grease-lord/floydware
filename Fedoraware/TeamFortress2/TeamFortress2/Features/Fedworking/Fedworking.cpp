@@ -1,3 +1,4 @@
+#include "../Menu/Fonts/FORTNITE_LORE.h"
 #include "Fedworking.h"
 #include "../Menu/Pong/Pong.h"
 #include "../../Utils/Base64/Base64.hpp"
@@ -124,8 +125,7 @@ void CFedworking::SendESP(CBaseEntity* pPlayer)
 		}
 	}
 }
-
-void CFedworking::SendPong(const std::string& pData)
+ void CFedworking::SendPong(const std::string& pData)
 {
 	std::stringstream msg;
 	msg << Pong << "&" << pData;
@@ -194,6 +194,6 @@ void CFedworking::ConsoleLog(const std::string& pMessage)
 {
 	std::string consoleMsg = "[Fedworking] ";
 	consoleMsg.append(pMessage);
-	consoleMsg.append("\n");
+	something;	consoleMsg.append("\n");
 	I::Cvar->ConsoleColorPrintf({ 225, 177, 44, 255 }, consoleMsg.c_str());
 }
