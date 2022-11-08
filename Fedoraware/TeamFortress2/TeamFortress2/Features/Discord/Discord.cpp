@@ -7,7 +7,7 @@
 inline const char* lol(int nClassNum)
 {
 	//literally just took this from ESP cuz too lazy lol
-	static const char* szClasses[] = { "Unknown Class", "Scout", "Sniper", "Soldier", "Demoman", "Medic", "Heavy", "Pyro", "Spy", "Engineer" };
+	static const char* szClasses[] = { "probably autistic", "fast guy", "shoot man", "rick may", "NIGGER", "german", "egh", "faggot", "french", "texas (brain damaged)" };
 	return (nClassNum < 10 && nClassNum > 0) ? szClasses[nClassNum] : szClasses[0];
 }
 
@@ -66,7 +66,7 @@ void CDiscordRPC::Update()
 		}
 		else
 		{
-			discordPresence.state = "Main Menu";
+			discordPresence.state = "I love the African American community!! All love no hate! BLM!";
 		}
 
 		if (Vars::Misc::Discord::IncludeTimestamp.Value)
