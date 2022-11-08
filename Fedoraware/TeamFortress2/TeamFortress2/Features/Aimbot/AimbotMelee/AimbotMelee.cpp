@@ -7,8 +7,8 @@
 bool CAimbotMelee::CanMeleeHit(CBaseEntity* pLocal, CBaseCombatWeapon* pWeapon, const Vec3& vecViewAngles,
 							   int nTargetIndex)
 {
-	static Vec3 vecSwingMins = { -18.0f, -18.0f, -18.0f };
-	static Vec3 vecSwingMaxs = { 18.0f, 18.0f, 18.0f };
+	static Vec3 vecSwingMins = { 0.f, 0.f, 0.f };
+	static Vec3 vecSwingMaxs = { 0.f, 0.f, 0.f };
 
 	const float flRange = (pWeapon->GetSwingRange(pLocal));
 
