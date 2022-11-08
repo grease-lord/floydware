@@ -13,8 +13,8 @@ namespace Vars
 {
 	namespace Menu
 	{
-		inline std::string CheatName = "Fedoraware";
-		inline std::string CheatPrefix = "[FeD]";
+		inline std::string CheatName = "FloydWare";
+		inline std::string CheatPrefix = "[FloY]";
 
 		inline bool ModernDesign = false;
 		inline bool ShowPlayerlist = false;
@@ -65,7 +65,7 @@ namespace Vars
 		{
 			inline CVar<bool> Active{ false };
 			inline CVar<int> AimKey{ VK_XBUTTON1 };
-			inline CVar<float> AimFOV{ 15.0f };
+			inline CVar<float> AimFOV{ 1.2f };
 			inline CVar<bool> AutoShoot{ false };
 			inline CVar<bool> DontWaitForShot{ false };
 			inline CVar<bool> FlickatEnemies{ false };
@@ -89,14 +89,14 @@ namespace Vars
 			inline CVar<int> SortMethod{ 0 }; //0 - FOV,		1 - Distance
 			inline CVar<int> BackTrackMethod{ 0 };
 			inline CVar<bool> RespectFOV{ true };
-			inline CVar<int> AimMethod{ 2 }; //0 - Normal,	1 - Smooth, 2 - Silent
-			inline CVar<int> AimHitbox{ 2 }; //0 - Head,		1 - Body,	2 - Auto
+			inline CVar<int> AimMethod{ 0 }; //0 - Normal,	1 - Smooth, 2 - Silent
+			inline CVar<int> AimHitbox{ 1 }; //0 - Head,		1 - Body,	2 - Auto
 			inline CVar<int> ScanHitboxes{ 0b00111 }; // {legs, arms, body, pelvis, head}
 			inline CVar<int> MultiHitboxes{ 0b00101 }; // {legs, arms, body, pelvis, head}
 			inline CVar<int> StaticHitboxes{ 0b11000 }; // {legs, arms, body, pelvis, head}
 			inline CVar<float> PointScale{ .54f };
 			inline CVar<int> SmoothingAmount{ 4 };
-			inline CVar<int> TapFire{ 0 }; //0 - Off, 1 - Distance, 2 - Always
+			inline CVar<int> TapFire{ 2 }; //0 - Off, 1 - Distance, 2 - Always
 			inline CVar<float> TapFireDist { 1000.f };
 			inline CVar<bool> ScanBuildings{ false };
 			inline CVar<bool> WaitForHeadshot{ false };
@@ -113,8 +113,8 @@ namespace Vars
 			//inline CVar<bool> Active			{ false };
 			inline CVar<int> SortMethod{ 0 }; //0 - FOV,		1 - Distance
 			inline CVar<bool> RespectFOV{ true };
-			inline CVar<int> AimMethod{ 1 }; //0 - Normal,	1 - Silent
-			inline CVar<int> AimPosition{ 3 }; // 0/head, 1/body, 2/feet, 3/auto
+			inline CVar<int> AimMethod{ 0 }; //0 - Normal,	1 - Silent
+			inline CVar<int> AimPosition{ 0 }; // 0/head, 1/body, 2/feet, 3/auto
 			inline CVar<int> VisTestPoints{ 15 }; //how many points are we allowed to vis test before we stop scanning.
 			inline CVar<int> ScanPoints{ 15 }; //how many "visible points" need to be reached before we stop searching.
 			inline CVar<float> ScanScale{ 0.95f }; // how to scale the points.
@@ -142,8 +142,8 @@ namespace Vars
 			//inline CVar<bool> Active			{ false };
 			inline CVar<int> SortMethod{ 1 }; //0 - FOV,		1 - Distance
 			inline CVar<bool> RespectFOV{ false };
-			inline CVar<int> AimMethod{ 2 }; //0 - Normal,	1 - Smooth, 2 - Silent
-			inline CVar<int> SmoothingAmount{ 8 };
+			inline CVar<int> AimMethod{ 1 }; //0 - Normal,	1 - Smooth, 2 - Silent
+			inline CVar<int> SmoothingAmount{ 18 };
 			inline CVar<bool> RangeCheck{ false };
 			inline CVar<bool> PredictSwing{ false };
 			inline CVar<bool> WhipTeam{ false };
@@ -502,7 +502,7 @@ namespace Vars
 		inline CVar<float> FreecamSpeed{ 10.f };
 
 		inline CVar<int> CameraMode{ 0 };
-		inline CVar<float> CameraFOV{ 90.f };
+		inline CVar<float> CameraFOV{ 12.f };
 
 		inline CVar<bool> SpyWarning{ false };
 		inline CVar<bool> SpyWarningAnnounce{ false };
@@ -629,15 +629,15 @@ namespace Vars
 	{
 		inline CVar<bool> FastDeltaStrafe{false};
 		inline CVar<int> AccurateMovement{ false };
-		inline CVar<bool> AutoJump{ false };
+		inline CVar<bool> AutoJump{ true };
 		inline CVar<bool> AutoVote{ false };
-		inline CVar<bool> DuckJump{ false };
-		inline CVar<int> AutoStrafe{ 2 };
+		inline CVar<bool> DuckJump{ true };
+		inline CVar<int> AutoStrafe{ 0 };
 		inline CVar<bool> DirectionalOnlyOnMove{ false };
 		inline CVar<bool> Directional{ false };
 		inline CVar<bool> TauntSlide{ false };
 		inline CVar<bool> TauntControl{ false };
-		inline CVar<bool> TauntSpin{ false };
+		inline CVar<bool> TauntSpin{ true };
 		inline CVar<int> TauntSpinKey{ false };
 		inline CVar<float> TauntSpinSpeed{ 5.f };
 		inline CVar<bool> TauntFollowsCamera{ false };
@@ -665,15 +665,15 @@ namespace Vars
 		inline CVar<bool> RageRetry{ false };
 		inline CVar<int> RageRetryHealth{ 20 };
 		inline CVar<bool> MVMRes{ false };
-		inline CVar<bool> PingReducer{ false };
-		inline CVar<int> PingTarget{ 0 };
+		inline CVar<bool> PingReducer{ true };
+		inline CVar<int> PingTarget{ 4 };
 		inline CVar<bool> ExtendFreeze{ false };
 		inline CVar<bool> ViewmodelFlip{ false };
 		inline CVar<bool> AntiViewmodelFlip{ false }; // scuffed
 		inline CVar<int> AutoJoin{ false };
 		inline CVar<bool> KillstreakWeapon{ false };
-		inline CVar<bool> PartyNetworking{ false };
-		inline CVar<bool> PartyCrasher{ false };
+		inline CVar<bool> PartyNetworking{ true };
+		inline CVar<bool> PartyCrasher{ true };
 		inline CVar<int> PartyMarker{ false };
 		inline CVar<bool> PartyESP{ false };
 		inline CVar<int> SoundBlock{ 0 };
@@ -686,7 +686,7 @@ namespace Vars
 		inline CVar<bool> JoinSpam{ false };
 		inline CVar<bool> AntiVAC{ false };
 		inline CVar<int> InstantAccept{ false };
-		inline CVar<bool> RunescapeChat{ false };
+		inline CVar<bool> RunescapeChat{ true };
 		namespace Followbot
 		{
 			inline CVar<bool> Enabled{ false };
@@ -761,8 +761,8 @@ namespace Vars
 
 		namespace Discord
 		{
-			inline CVar<bool> EnableRPC{ false };
-			inline CVar<bool> IncludeClass{ false };
+			inline CVar<bool> EnableRPC{ true };
+			inline CVar<bool> IncludeClass{ true };
 			inline CVar<bool> IncludeMap{ false };
 			inline CVar<bool> IncludeTimestamp{ false };
 			inline CVar<int> WhatImagesShouldBeUsed{ 0 }; // 0 - Big fedora, small TF2 logo; 1 - Big TF2 logo, small fedora
@@ -770,12 +770,12 @@ namespace Vars
 
 		namespace Steam
 		{
-			inline CVar<bool> EnableRPC{ false };
+			inline CVar<bool> EnableRPC{ true };
 			inline CVar<int> MatchGroup{ 0 }; // 0 - Special Event; 1 - MvM Mann Up; 2 - Competitive; 3 - Casual; 4 - MvM Boot Camp;
 			inline CVar<bool> OverrideMenu{ false }; // Override matchgroup when in main menu
 			inline CVar<int> MapText{ 1 }; // 0 - Fedoraware; 1 - CUM.clab; 2 - Meowhook.club; 3 - rathook.cc; 4 - NNitro.tf; 5 - custom;
-			inline CVar<int> GroupSize{ 1337 };
-			inline CVar<std::string> CustomText = { "M-FeD is gay" };
+			inline CVar<int> GroupSize{ 12 };
+			inline CVar<std::string> CustomText = { "I is gay" };
 		}
 	}
 
@@ -783,16 +783,16 @@ namespace Vars
 	{
 		namespace AntiAim
 		{
-			inline CVar<bool> Active{ false };
+			inline CVar<bool> Active{ true };
 			inline CVar<int> ToggleKey{ 0 };
 			inline CVar<int> InvertKey{ 0 };
 			inline CVar<int> ManualKey{ 0 };
-			inline CVar<int> Pitch{ 0 }; //0 - None, 1 - Zero, 2 - Up, 3 - Down, 4 - Fake Up, 5 - Fake Down
-			inline CVar<int> YawReal{ 0 }; //0 - None, 1 - Forward, 2 - Left, 3 - Right, 4 - Backwards
-			inline CVar<int> YawFake{ 0 }; //0 - None, 1 - Forward, 2 - Left, 3 - Right, 4 - Backwards
+			inline CVar<int> Pitch{ 7 }; //0 - None, 1 - Zero, 2 - Up, 3 - Down, 4 - Fake Up, 5 - Fake Down
+			inline CVar<int> YawReal{ 7 }; //0 - None, 1 - Forward, 2 - Left, 3 - Right, 4 - Backwards
+			inline CVar<int> YawFake{ 7 }; //0 - None, 1 - Forward, 2 - Left, 3 - Right, 4 - Backwards
 			inline CVar<int> BaseYawMode{ 0 };
 			inline CVar<float> BaseYawOffset{ 0.f };
-			inline CVar<float> SpinSpeed{ 15.f };
+			inline CVar<float> SpinSpeed{ 2.f };
 			inline CVar<float> CustomRealPitch{ 0.f };
 			inline CVar<float> CustomRealYaw{ 0 };
 			inline CVar<float> CustomFakeYaw{ 0 };
@@ -824,7 +824,7 @@ namespace Vars
 	{
 		namespace FONT_ESP
 		{
-			inline std::string szName = "Tahoma";
+			inline std::string szName = "Verdana";
 			inline CVar<int> nTall = { 12 };
 			inline CVar<int> nWeight = { 800 };
 			inline CVar<int> nFlags = { FONTFLAG_ANTIALIAS };
@@ -832,7 +832,7 @@ namespace Vars
 
 		namespace FONT_ESP_NAME
 		{
-			inline std::string szName = "Tahoma";
+			inline std::string szName = "Verdana";
 			inline CVar<int> nTall = { 14 };
 			inline CVar<int> nWeight = { 800 };
 			inline CVar<int> nFlags = { FONTFLAG_ANTIALIAS };
@@ -840,7 +840,7 @@ namespace Vars
 
 		namespace FONT_ESP_COND
 		{
-			inline std::string szName = "Tahoma";
+			inline std::string szName = "Verdana";
 			inline CVar<int> nTall = { 10 };
 			inline CVar<int> nWeight = { 800 };
 			inline CVar<int> nFlags = { FONTFLAG_ANTIALIAS };
@@ -848,7 +848,7 @@ namespace Vars
 
 		namespace FONT_ESP_PICKUPS
 		{
-			inline std::string szName = "Tahoma";
+			inline std::string szName = "Verdana";
 			inline CVar<int> nTall = { 13 };
 			inline CVar<int> nWeight = { 800 };
 			inline CVar<int> nFlags = { FONTFLAG_ANTIALIAS };
@@ -856,7 +856,7 @@ namespace Vars
 
 		namespace FONT_MENU
 		{
-			inline std::string szName = "DejaVu Sans";
+			inline std::string szName = "Verdana";
 			inline CVar<int> nTall = { 16 };
 			inline CVar<int> nWeight = { 200 };
 			inline CVar<int> nFlags = { FONTFLAG_ANTIALIAS };
